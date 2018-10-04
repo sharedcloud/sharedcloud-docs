@@ -9,7 +9,7 @@ This CLI tool is the perfect companion to the **Sharedcloud** platform. It links
 * Create, update, delete and list your Functions.
 * Create and delete your Runs.
 * List your Jobs and display their statuses.
-* Inspect the result, stdout, stderr and logs of a certain Job.
+* Inspect the result, stdout, stderr, and logs of a particular Job.
 * Create, update, delete and list your Instances.
 * List Images currently available.
 * List GPU models currently available.

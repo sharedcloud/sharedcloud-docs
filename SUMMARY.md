@@ -12,6 +12,7 @@
 ## Sharedcloud CLI
 
 * [Overview](sharedcloud-cli/overview.md)
+* [Requirements](sharedcloud-cli/requirements.md)
 * [How to install](sharedcloud-cli/installation.md)
 * [Commands Reference](sharedcloud-cli/commands-reference/README.md)
   * [Login](sharedcloud-cli/commands-reference/login.md)

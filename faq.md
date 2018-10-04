@@ -14,7 +14,15 @@ In short, this paradigm allows you to expose functions for later use. Think of i
 
 Not only this approach allows you to process abundantly amount of data at a minimal cost, but also simplifies the communication between services greatly, as the inputs and outputs of each function are perfectly defined.
 
-## What functions can I create?
+## How is Sharedcloud similar to the Stockmarket?
+
+In the Stockmarket you have people who want to buy stocks and people who want  to sell stocks \(it's a bit more complicated than that, but you get the idea\).
+
+A transaction is made when a buyer offers a price \("bid-price"\) that is equal or bigger to the price a seller is asking for \("ask-price"\).
+
+Now consider a buyer as the user who wants to "run a function" and the seller as the user who wants to "share the computing power." Like in the Stockmarket, both the buyer and the seller needs to agree at the price for a transaction to occur. This is why believe that both systems share a fair bit of similarities.
+
+## What type of functions can I create?
 
 Any code can be inside your functions, so any kind, really. Having said that, if you use third party libraries, please make sure to choose an image that includes them, otherwise those libraries might not be available for your function.
 
@@ -44,7 +52,7 @@ GPU machines have some special requirements at this time. We only support Nvidia
 
  Said that, we recommend you double-check with us in case of doubt. 
 
-## What type of instance should I create?
+## What instance "type" should I choose?
 
 That's entirely up to you! However, if you have an eligible GPU, we recommend you chose the "GPU" type for the bigger profit that you might end up making \(users tend to pay more for GPU usage\). Please keep in mind though, that you can only have one active instance per computer.
 
