@@ -1,6 +1,14 @@
 # How to run a "web crawler" function in a remote instance
 
-## 1. Creating the file with our Function
+{% hint style="warning" %}
+We are currently on Beta phase! Therefore, account creation is only **"invitation-based**". Write us if you want to sign up for the beta!
+{% endhint %}
+
+{% hint style="info" %}
+It's strongly recommended to have a look first at the "Getting Started" guide, as some concepts are not going to be explained in detail here.
+{% endhint %}
+
+## 1. Create a file with our Function
 
 We'll start by creating a new python3 file where we'll write the code in:
 

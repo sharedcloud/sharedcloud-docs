@@ -1,10 +1,14 @@
 # How to run a "tensorflow-based" function in a remote GPU instance
 
+{% hint style="warning" %}
+We are currently on Beta phase! Therefore, account creation is only **"invitation-based**". Write us if you want to sign up for the beta!
+{% endhint %}
+
 {% hint style="info" %}
 It's strongly recommended to have a look first at the "Getting Started" guide, as some concepts are not going to be explained in detail here.
 {% endhint %}
 
-## 1. Creating the file with our Function
+## 1. Create a file with our Function
 
 Let's create a new python3 file where we'll write the code in:
 

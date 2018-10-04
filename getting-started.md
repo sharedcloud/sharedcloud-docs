@@ -4,7 +4,7 @@
 We are currently on Beta phase! Therefore, account creation is only **"invitation-based**". Write us  if you want to sign up for the beta!
 {% endhint %}
 
-## 1. Creating the file with our Function
+## 1. Create a file with our Function
 
 We'll start by creating a new python3 file where we'll write the code in:
 
