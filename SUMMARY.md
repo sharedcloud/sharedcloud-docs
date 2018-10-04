@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Getting Started](README.md)
+* [What's Sharedcloud](README.md)
+* [Getting Started](getting-started.md)
 
 ## Tutorials
 
