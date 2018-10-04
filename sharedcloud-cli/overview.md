@@ -1,7 +1,3 @@
----
-description: What can you do with the Sharedcloud CLI
----
-
 # Overview
 
 ## Sharedcloud CLI
