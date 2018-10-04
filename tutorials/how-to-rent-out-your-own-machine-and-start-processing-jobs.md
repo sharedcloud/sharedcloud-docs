@@ -1,18 +1,20 @@
-# How to rent out your own machine and start processing jobs
+# How to rent out your machine resources and start processing jobs
 
 {% hint style="warning" %}
 We are currently on Beta phase! Therefore, instance creation is only **"invitation-based**". Write us if you want to sign up for the beta!
 {% endhint %}
 
-## Creating the instance
+## 1. Log in into Sharedcloud
 
-1\) The first step would be to log in using the Sharedcloud CLI tool:
+The first step would be to log in using the Sharedcloud CLI tool:
 
 ```text
 sharedcloud login --username <your_username> --password <your_password>
 ```
 
-2\) After this is done, you will be able to create your instance:
+## 2. Create an Instance
+
+After this is done, we will be able to create an instance:
 
 ```text
 sharedcloud instance create --name my_first_instance \
@@ -28,7 +30,9 @@ sharedcloud instance create --name my_first_instance \
 Another important thing to notice is the **"--ask-price".** This decimal number means the minimum amount \(in dollars\) for which you would be willing to rent out your computer per job and per minute. For example, if you set "0.005" and you run 3 tasks that take 5 minutes each, you would make "0.005 \* 3 \* 5" = $0.075
 {% endhint %}
 
-3\) If the command ran successfully, you should see now an instance after your run:
+## 3. List the Instances
+
+If the command ran successfully, we should see an instance after running:
 
 ```text
 sharedcloud instance list
@@ -41,39 +45,45 @@ UUID                                  NAME               STATUS           ASK_PR
 
 ```
 
-If you have a powerful computer, you can even parallelize incoming jobs to increment your profit. To do that, you can pass the argument **"--max-num-parallel-jobs"** when creating or updating an instance.
+If we had a powerful computer, we could even parallelize incoming jobs to increment our profit. To do that, we can pass the argument **"--max-num-parallel-jobs"** when creating or updating an instance.
 
 {% hint style="info" %}
 Please notice that due to the own nature of the GPUs, the **"--max-num-parallel-jobs"** argument won't be compatible with such instances.
 {% endhint %}
 
-4\) Alright, we are almost there. The next step would be to download some images so we can run jobs from people. This is necessary beforehand, because this process usually takes a few minutes \(depending on the image\), and we don't want jobs to wait until this is done.
+## 4. Download an Image
 
-You definitely don't need to download all of them! It's completely up to you. Usually it depends on which kind of jobs you would like to specialize. For example, if you would like to to process "web-crawling" jobs, you most likely will want to download such images. In this guide, for the sake of simplicity, we'll download only one image "sharedcloud/web-crawling-python36:latest":
+Alright, we are almost there. The next step would be to download some images so we can run jobs from people. This is necessary beforehand, because this process usually takes a few minutes \(depending on the image\), and we don't want upcoming jobs to wait until this is done.
+
+We definitely don't need to download all the images available! It's completely up to us. Usually it depends on which kind of jobs you would like to specialize. For example, if we would like to process "web-crawling" jobs, we most likely will want to download images in that area. In this guide, for the sake of simplicity, we'll download only one image **"sharedcloud/web-crawling-python36:latest":**
 
 ```text
 sharedcloud image download --registry-path=sharedcloud/web-crawling-python36:latest
 ```
 
 {% hint style="info" %}
-Please keep in mind that **CPU** and **GPU** instances won't be able to use the same images. There're images specialized for each type, so don't be scared if you encounter a warning message while downloading ;\)
+Please keep in mind that **CPU** and **GPU** instances won't be able to use the same images. There're images specialized for each type, so don't be scared if you encounter a warning message preventing you to download a certain image ;\)
 {% endhint %}
 
 {% hint style="info" %}
-If at some point you would like to "remove' it to free some space up, you can run the command "sharedcloud image clean --registry-path=sharedcloud/web-crawling-python36"
+If at some point you would like to "remove' an image to free some space up, you can run the command:
+
+ sharedcloud image clean --registry-path=&lt;registry\_path&gt;
 {% endhint %}
 
 {% hint style="warning" %}
-**Important**: Always "download" and "clean" images using those commands. Otherwise our servers won't realize of this change.
+**Important**: Always "download" and "clean" images using those commands. Otherwise our servers won't be aware of this change and you won't receive the right jobs.
 {% endhint %}
 
-5\) Ok, enough talking, it's time to run your instance!
+## 5. Start the Instance
+
+Ok, enough talking, it's time to run our instance!
 
 ```text
 sharedcloud instance start
 ```
 
-You should start seeing some text in your screen, something like:
+We should start seeing some text in our screen, something like:
 
 ```text
 [INFO] Updating all downloaded images...
@@ -90,7 +100,7 @@ This means that the instance is waiting to receive jobs from the dispatcher. Two
 1. **The "bid-price" and "ask-price" match**
 2. **The image required by the Job is already present in the instance**
 
-If both conditions apply, you should start seeing soon an output like this one:
+If both conditions apply, we should start seeing soon an output like this one:
 
 ```text
 [INFO] 2 job/s arrived, please be patient...
@@ -100,8 +110,10 @@ If both conditions apply, you should start seeing soon an output like this one:
 ```
 
 {% hint style="success" %}
-Congratulations! You made money! To find out how much you made, just head to the account details:
+Congratulations! We made some money today! To find out how much we made, just head to the account details:
 {% endhint %}
+
+## 6. See Account Balance
 
 ```text
 sharedcloud account list
@@ -114,9 +126,11 @@ UUID                                  EMAIL              USERNAME    BALANCE    
 
 ```
 
-Of course, depending on how long the jobs ran, and how much was the ask price, the amount will definitely vary, but now you know how this works :\)
+Cool! Of course, depending on how long the jobs ran, and how much was the ask price, the amount will definitely vary, but now we know how to process jobs :\)
 
 {% hint style="danger" %}
-Please, never stop the server while jobs are being processed. You won't receive payment and you might get penalized in the algorithm
+Please, NEVER stop the server while jobs are being processed. You won't receive payment and you might get penalized in the algorithm
 {% endhint %}
+
+
 
