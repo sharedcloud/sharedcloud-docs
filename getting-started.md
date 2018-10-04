@@ -99,7 +99,7 @@ Perfect. So now that we have the function, the only thing left is to run it. To 
 
 ```text
 sharedcloud run create --parameters "(('Michael',), ('World',))" \
-                       --function-uuid <your_function_uuid> \
+                       --function-uuid a53596a9-3867-413a-9218-5a4bfdbb05eb \
                        --bid-price 0.01
 ```
 

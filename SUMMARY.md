@@ -7,6 +7,7 @@
 ## Tutorials
 
 * [How to run a "tensorflow-based" function in a remote GPU instance](tutorials/how-to-run-a-tensorflow-based-function-in-a-remote-gpu-instance.md)
+* [How to run a "web crawler" function in a remote instance](tutorials/how-to-run-a-web-crawler-function-in-a-remote-instance.md)
 * [How to rent out your machine resources and start processing jobs](tutorials/how-to-rent-out-your-own-machine-and-start-processing-jobs.md)
 
 ## Sharedcloud CLI
