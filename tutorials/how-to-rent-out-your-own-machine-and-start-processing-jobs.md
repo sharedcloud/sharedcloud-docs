@@ -1,9 +1,3 @@
----
-description: >-
-  In this guide, we'll see how to create a virtual instance that you can rent
-  out for money to other users (15 minutes)
----
-
 # How to rent out your own machine and start processing jobs
 
 {% hint style="warning" %}

@@ -1,9 +1,3 @@
----
-description: >-
-  In this guide, we'll see how to create a tensorflow-based function, and how to
-  run it in a remote GPU instance (15 minutes)
----
-
 # How to run a tensorflow script in a GPU instance
 
 {% hint style="info" %}

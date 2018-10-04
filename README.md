@@ -1,9 +1,3 @@
----
-description: >-
-  In this guide, we'll see how to create an extremely simple function that's
-  going to print some words into screen (15 minutes)
----
-
 # Getting Started
 
 {% hint style="warning" %}
