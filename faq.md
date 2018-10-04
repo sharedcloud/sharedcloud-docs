@@ -38,17 +38,17 @@ _Let's say that your budget is $1 and that you would like to run 10 Jobs in para
 
 That's the amount that you should put as your "bid-price". Keep in mind, however, that the total amount of money that you pay in the end might be bigger than your budget if the Jobs end up taking longer time than the 5 minutes we estimated. Because of this, it's a good practice to reduce the "bid-price" a few cents to have some room for such cases.
 
-## What type of machines can I share resources from?
+## What kind computers can I share resources from?
 
 We currently support both "Standard/CPU" instances \(e.g., laptops, desktop computers...\) and "GPU" instances \(e.g., gaming computers, mining stations...\)
 
 Please see below the conditions to be eligible.
 
-## What machines are eligible to share their computing power?
+## What are the minimum specs to share resources?
 
-To guarantee that Jobs are going to be successfully processed, we only accept machines that have at least 8GB RAM and at least 30GB of free disk. Please keep in mind that the CLI is not going to use all that amount of disk space necessarily, is just a safety range to avoid interruptions while processing Jobs.
+To guarantee that Jobs are going to be successfully processed, we only accept as instances computers that have at least 8GB RAM and at least 30GB of free disk. Please keep in mind that the CLI is not going to use all that amount of disk space necessarily, is just a safety range to avoid interruptions while processing Jobs.
 
-GPU machines have some special requirements at this time. We only support Nvidia GPUs not older than the GTX 10 Series. If your GPU doesn't qualify, please be patient, we plan to extend the number of supported GPUs in the future.
+GPU instances have some special requirements at this time. We only support Nvidia GPUs not older than the GTX 10 Series. If your GPU doesn't qualify, please be patient, we plan to extend the number of supported GPUs in the future.
 
  Said that we recommend you double-check with us in case of doubt. 
 
@@ -66,4 +66,12 @@ Some things to keep in mind:
 
 * Jobs get dispatched to your instance ONLY if the buyer's "bid-price" matches with the "ask-price". Because of this, we recommend that the "ask-price" is not set too high. In case of doubt, you can ask us, and we can give your some price estimations.
 * Users tend to pay much more for GPU instances. Be aware of this while setting your "ask-price". If you don't have a GPU instance, it's probably a good idea to be realistic and set a low "ask-price" in the beginning.
+
+## How long do I need to keep the instance running?
+
+There's not a minimum amount of time that you need to keep your instance running after you start it. The only rule of thumb is that you DON'T stop the instance while Jobs are being processed. If you do so, you won't get paid and also you might get penalized in the ranking of the dispatcher algorithm.
+
+For cases when you need to shut down the computer while Jobs are running, we recommend to wait until the Jobs are completed, and stop the instance right after, to prevent new Jobs to come in.
+
+
 
