@@ -108,9 +108,9 @@ UUID                                  NAME         IMAGE                        
 
 ## 6. List GPU models available
 
-The next step would be to define the run. As we explain previously, a run is a configuration object that we can use to specify different things like the list of arguments that we want to pass to the function. Additionally, a pretty interesting feature is the possibility of specifying the "base" GPU that we would like to use. With "base GPU" we refer to minimum GPU that this function will need to be able to run successfully.
+The next step would be to define the run. As we explained previously, a run is a configuration object that we can use to specify different things like the list of arguments that we want to pass to the function. Additionally, a pretty interesting feature is the possibility of specifying the "base" GPU that we would like to use. With "base GPU" we refer to minimum GPU that this function needs to be able to run successfully.
 
-For example, if our function trains a neural network with many layers, we might want to select a GPU with plenty of GBs or RAM, otherwise our function might not finish well...
+For example, if our function trains a neural network with many layers, we might want to select a GPU with plenty of GBs of RAM; otherwise our function might not finish well...
 
 For listing all the GPUs available in a precise point of time, we run:
 
@@ -148,11 +148,11 @@ Notice how the **"--gpu-uuid"** parameters contains the UUID of the **Nvidia Tit
 {% hint style="info" %}
 Some interesting things from the last command:
 
-1. The "**--parameters**" argument NEEDS to always be a tuple of tuple. The reason is simple. Each tuple is going to be passed to the function we defined previously, so we want to support passing several arguments e.g., \(\(1, 2, 3\),\)
+1. The "**--parameters**" argument NEEDS always to be a tuple of tuple. The reason is simple. Each tuple is going to be passed to the function we defined previously, so we want to support passing several arguments, e.g. \(\(1, 2, 3\),\)
 2. The "**--bid-price**" argument represents the maximum amount of money \(in dollars\) that you would like to pay for each job, each minute. For example, "0.1" means that if I have 2 jobs, and each task takes 5 minutes, I would pay "0.05 \* 2 \* 5" = $0.5
 {% endhint %}
 
-As we saw in the "Getting Started" guide, this created as many jobs as many internal tuples has the **"--parameters"** argument \(2 in this case!\) Let's see how they would be applied to our function:
+As we saw in the "Getting Started" guide, this created as many jobs as many internal tuples have the **"--parameters"** argument \(2 in this case!\) Let's see how they would be applied to our function:
 
 {% code-tabs %}
 {% code-tabs-item title="JOB 1" %}

@@ -16,27 +16,27 @@ Not only this approach allows you to process abundantly amount of data at a mini
 
 ## How is Sharedcloud similar to the Stockmarket?
 
-In the Stockmarket you have people who want to buy stocks and people who want  to sell stocks \(it's a bit more complicated than that, but you get the idea\).
+In the Stockmarket, you have people who want to buy stocks and people who want to sell stocks \(it's a bit more complicated than that, but you get the idea\).
 
-A transaction is made when a buyer offers a price \("bid-price"\) that is equal or bigger to the price a seller is asking for \("ask-price"\).
+A transaction happens when a buyer offers a price \("bid-price"\) that is equal or bigger to the price a seller is asking for \("ask-price"\).
 
-Now consider a buyer as the user who wants to "run a function" and the seller as the user who wants to "share the computing power." Like in the Stockmarket, both the buyer and the seller needs to agree at the price for a transaction to occur. This is why believe that both systems share a fair bit of similarities.
+Now consider a buyer as the user who wants to "run a function" and the seller as the user who wants to "share the computing power." Like in the Stockmarket, both the buyer and the seller needs to agree at a price for a transaction to occur. This is why believe that both systems share a fair bit of similarities.
 
 ## What type of functions can I create?
 
-Any code can be inside your functions, so any kind, really. Having said that, if you use third party libraries, please make sure to choose an image that includes them, otherwise those libraries might not be available for your function.
+Any code can be inside your functions, so any kind. Having said that, if you use third-party libraries, please make sure to choose an image that includes them; otherwise, those libraries might not be available for your function.
 
 ## What runtimes can I use for my functions?
 
-As of today, we support Python3.6, Python2.7 and Node.js \(version 8\)
+As of today, we support Python3.6, Python2.7, and Node.js \(version 8\)
 
 ## How much should I set my "bid-price"?
 
-It all depends on how much is your budget, how many parallel Jobs you are running and how long you estimate that each Job is going to take. In a few words, the "bid-price" represents the amount of American dollars that a buyer is willing to pay per job and per minute. So this would be one way to estimate our "bid-price" based on our budget:
+It all depends on how much is your budget, how many parallel Jobs you are running and how long you estimate that each Job is going to take. In a few words, the "bid-price" represents the number of American dollars that a buyer is willing to pay per job and minute. So this would be one way to estimate our "bid-price" based on our budget:
 
-_Let's say that your budget is $1 and that you would like to run 10 Jobs in parallel. You estimate that each Job is going to take around 5 minutes, so by doing some maths we can find a good "bid-price": $1 / \(10\*5\) = $0.02_
+_Let's say that your budget is $1 and that you would like to run 10 Jobs in parallel. You estimate that each Job is going to take around 5 minutes, so by doing some maths, we can find a good "bid-price": $1 / \(10\*5\) = $0.02_
 
-That's the amount that you should put as your "bid-price". Keep in mind, however, that the total amount of money that you will pay in the end might be bigger than your budget if the Jobs end up taking longer time than the 5 minutes we estimated. This is why it's a good practice to reduce the "bid-price" a few cents to have some room for such cases.
+That's the amount that you should put as your "bid-price". Keep in mind, however, that the total amount of money that you pay in the end might be bigger than your budget if the Jobs end up taking longer time than the 5 minutes we estimated. Because of this, it's a good practice to reduce the "bid-price" a few cents to have some room for such cases.
 
 ## What type of machines can I share resources from?
 
@@ -46,24 +46,24 @@ Please see below the conditions to be eligible.
 
 ## What machines are eligible to share their computing power?
 
-In order to guarantee that Jobs are going to be successfully processed, we only accept machines that have at least 8GB RAM and at least 30GB of free disk. Please keep in mind that the CLI is not going to necessarily use all that amount of disk space, is just a safety range to avoid interruptions while processing Jobs.
+To guarantee that Jobs are going to be successfully processed, we only accept machines that have at least 8GB RAM and at least 30GB of free disk. Please keep in mind that the CLI is not going to use all that amount of disk space necessarily, is just a safety range to avoid interruptions while processing Jobs.
 
 GPU machines have some special requirements at this time. We only support Nvidia GPUs not older than the GTX 10 Series. If your GPU doesn't qualify, please be patient, we plan to extend the number of supported GPUs in the future.
 
- Said that, we recommend you double-check with us in case of doubt. 
+ Said that we recommend you double-check with us in case of doubt. 
 
 ## What instance "type" should I choose?
 
-That's entirely up to you! However, if you have an eligible GPU, we recommend you chose the "GPU" type for the bigger profit that you might end up making \(users tend to pay more for GPU usage\). Please keep in mind though, that you can only have one active instance per computer.
+That's entirely up to you! However, if you have an eligible GPU, we recommend you chose the "GPU" type for the more significant profit that you might end up making \(users tend to pay more for GPU usage\). Please keep in mind though, that you can only have one active instance per computer.
 
 ## How much should I set my "ask-price"? {#how-much-should-i-set-my-bid-price}
 
-It depends on how much money you would like to make out of your machine. In a few words, the "ask-price" represents the amount of American dollars that a seller would like to receive per job and per minute. Here comes an example:
+It depends on how much money you would like to make out of your machine. In a few words, the "ask-price" represents the number of American dollars that a seller would like to receive per job and minute. Here comes an example:
 
-_Let's imagine that you have processed 10 jobs today, and that each took 5 minutes. Previously, you had set an "ask-price" of $0.005.  Therefore, in that time, you would have made: $0.005 \* 10 \* 5 = $0_.25
+_Let's imagine that you have processed 10 jobs today and that each took 5 minutes. Previously, you had set an "ask-price" of $0.005.  Therefore, in that time, you would have made: $0.005 \* 10 \* 5 = $0_.25
 
 Some things to keep in mind:
 
-* Jobs will get dispatched to your instance ONLY if the buyer's "bid-price" matches with the "ask-price". Because of this, we recommend that the "ask-price" is not set too high. In case of doubt you can ask us and we can give your some price estimations.
-* Users tend to pay much more for GPU instances. Be aware of this while setting your "ask-price". If you don't have a GPU instance it's probably a good idea to be realistic and set a low "ask-price" in the beginning.
+* Jobs get dispatched to your instance ONLY if the buyer's "bid-price" matches with the "ask-price". Because of this, we recommend that the "ask-price" is not set too high. In case of doubt, you can ask us, and we can give your some price estimations.
+* Users tend to pay much more for GPU instances. Be aware of this while setting your "ask-price". If you don't have a GPU instance, it's probably a good idea to be realistic and set a low "ask-price" in the beginning.
 

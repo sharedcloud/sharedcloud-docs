@@ -32,12 +32,12 @@ def handler(event):
 {% endcode-tabs %}
 
 {% hint style="info" %}
- Pay attention to the name of the function: "**handler**", and the name of the arguments: "**event**".  Every function you create **MUST** use the same name conventions in the signature or otherwise won't be processed properly.
+ Pay attention to the name of the function: "**handler**", and the name of the arguments: "**event**".  Every function you create **MUST** use the same name conventions in the signature or otherwise, won't be processed properly.
 {% endhint %}
 
 ## 2. Log in into Sharedcloud
 
-That's it with regards our code! Let's now head to the **Sharedcloud-cli** tool and schedule the function we just created. The first thing we will do would be to "login" into **Sharedcloud**
+That's it with regards our code! Let's now head to the **Sharedcloud-cli** tool and schedule the function we just created. But first, let's "log in" into **Sharedcloud:**
 
 ```text
 sharedcloud login --username <your_username> --password <your_password>
@@ -45,7 +45,7 @@ sharedcloud login --username <your_username> --password <your_password>
 
 ## 3. Creating your first Function
 
-If the attempt was successful, we should have seem a message saying "**Login Succeeded**". Great! now, we can finally create our first function:
+If the attempt was successful, we should have seen a message saying "**Login Succeeded**". Great! Now, we can finally create our first function:
 
 ```text
 sharedcloud function create --name hello_world \
@@ -57,11 +57,11 @@ sharedcloud function create --name hello_world \
 Don't pay attention for now to the argument "**--image-uuid**". We'll talk about this soon
 {% endhint %}
 
-Nothing out of ordinary right? Just a name and a path to a file containing our code \(let's omit for now the other argument\)
+Nothing is out of order right? Just a name and a path to a file containing our code \(let's omit for now the other argument\)
 
 ## 4. List the Functions
 
-Alright. Now we can see the function we have just created by doing:
+All right. Now we can see the function we have just created by doing:
 
 ```bash
 sharedcloud function list
@@ -75,9 +75,9 @@ a53596a9-3867-413a-9218-5a4bfdbb05eb  hello_world  sharedcloud/web-crawling-pyth
 
 ## 5. List the Images
 
-Do you remember about the **"--image-uuid"** argument that we intentionally omitted when creating a function? Now we can see what it does. It simply specifies the image "where" this function needs to be run. And what's an image you might ask? It's an isolated environment with many interesting libraries already installed. So it's pretty useful in case our function make use of 3rd parties libraries.
+Do you remember about the **"--image-uuid"** argument that we intentionally omitted when creating a function? Now we can see what it does. It simply specifies the image "where" this function needs to be run. Also, what's an image you might ask? It's an isolated environment with many interesting libraries already installed. So it's pretty useful in case our function make use of 3rd parties libraries.
 
-As you will see, there're plenty of images that you can use for your functions \(e.g., for web-crawling, deep learning experiments...\), you can find them in our DockerHub account: [https://hub.docker.com/u/sharedcloud/](https://hub.docker.com/u/sharedcloud/) or by executing:
+As you see, there're plenty of images that you can use for your functions \(e.g., for web-crawling, deep learning experiments\), you can find them in our DockerHub account: [https://hub.docker.com/u/sharedcloud/](https://hub.docker.com/u/sharedcloud/) or by executing:
 
 ```text
 sharedcloud image list
@@ -106,11 +106,11 @@ sharedcloud run create --parameters "(('Michael',), ('World',))" \
 {% hint style="info" %}
 Some interesting things from the last command:
 
-1. The "**--parameters**" argument NEEDS to always be a tuple of tuple. The reason is simple. Each tuple is going to be passed to the function we defined previously \(don't worry, I'll explain this right away!\), so we want to support passing several arguments e.g., \(\(1, 2, 3\),\)
+1. The "**--parameters**" argument NEEDS always to be a tuple of tuple. The reason is simple. Each tuple is going to be passed to the function we defined previously \(don't worry, I'll explain this right away!\), so we want to support passing several arguments, e.g. \(\(1, 2, 3\),\)
 2. The "**--bid-price**" argument represents the maximum amount of money \(in dollars\) that you would like to pay for each job, each minute. For example, "0.01" means that if I have 2 jobs, and each task takes 5 minutes, I would pay "0.01 \* 2 \* 5" = $0.10
 {% endhint %}
 
-That's it. The previous command has created 2 jobs. Why? you might ask. Well, because we passed as parameters:
+That's it. The previous command has created 2 jobs. Why? You might ask. Well, because we passed as parameters:
 
 ```text
 "(('Michael',), ('World',))"
