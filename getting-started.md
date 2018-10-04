@@ -4,7 +4,7 @@
 We are currently on Beta phase! Therefore, account creation is only **"invitation-based**". Write us  if you want to sign up for the beta!
 {% endhint %}
 
-## 1. Creating the file with our function
+## 1. Creating the file with our Function
 
 We'll start by creating a new python3 file where we'll write the code in:
 
@@ -43,7 +43,7 @@ That's it with regards our code! Let's now head to the **Sharedcloud-cli** tool 
 sharedcloud login --username <your_username> --password <your_password>
 ```
 
-## 3. Creating your first function
+## 3. Creating your first Function
 
 If the attempt was successful, we should have seem a message saying "**Login Succeeded**". Great! now, we can finally create our first function:
 
@@ -59,7 +59,7 @@ Don't pay attention for now to the argument "**--image-uuid**". We'll talk about
 
 Nothing out of ordinary right? Just a name and a path to a file containing our code \(let's omit for now the other argument\)
 
-## 4. List the functions
+## 4. List the Functions
 
 Alright. Now we can see the function we have just created by doing:
 
@@ -73,7 +73,7 @@ UUID                                  NAME         IMAGE                        
 a53596a9-3867-413a-9218-5a4bfdbb05eb  hello_world  sharedcloud/web-crawling-python36:latest           0  11 seconds ago
 ```
 
-## 5. List the images
+## 5. List the Images
 
 Do you remember about the **"--image-uuid"** argument that we intentionally omitted when creating a function? Now we can see what it does. It simply specifies the image "where" this function needs to be run. And what's an image you might ask? It's an isolated environment with many interesting libraries already installed. So it's pretty useful in case our function make use of 3rd parties libraries.
 
@@ -206,7 +206,7 @@ sharedcloud job result --uuid 14804287-76d0-4113-9fc9-6114ca17b098
 ```
 
 {% hint style="success" %}
-Well, that's our first function with one run and two jobs! We can continue now with a tutorial about building a "real-life" task: **A tensorflow script to train a neural network in a GPU**
+Well, that's our first function with one run and two jobs! We can continue now with a tutorial about a function that does something useful this time: [**A "tensorflow-based" function to train a neural network in a GPU**](https://docs.sharedcloud.io/tutorials/how-to-run-a-tensorflow-based-function-in-a-remote-gpu-instance)\*\*\*\*
 {% endhint %}
 
 

@@ -92,7 +92,7 @@ sharedcloud function create --name mnist \
                             --image-uuid 23ca880b-94fe-472c-b9cf-934ed8295872
 ```
 
-## 5. List Functions
+## 5. List the Functions
 
 Ok! Now we can see our function with the cli:
 
@@ -188,7 +188,7 @@ def handler(event=((512, 0.2, 10, 3),)): # <--------
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-## 8. List Jobs
+## 8. List the Jobs
 
 Alright, let's see now how our jobs are doing:
 
@@ -213,7 +213,7 @@ fd68a431-ff23-4176-aba6-982d428aaab0     1  SUCCEEDED   $0.05   60 second/s    1
 4e49e9fe-e5bd-4259-af18-dbfb04ec4bfe     0  SUCCEEDED   $0.05   60 second/s    12 minutes ago  49485391-3a73-42d8-87ee-466a170bc7a4  mnist
 ```
 
-## 9. Inspect Job results
+## 9. Inspect the results
 
 Finally, as we explained in the previous guide, to inspect the results, we can use the following sub-commands:
 
