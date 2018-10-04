@@ -1,18 +1,18 @@
-# How to run a tensorflow script in a GPU instance
+# How to run a "tensorflow-based" function in a remote GPU instance
 
 {% hint style="info" %}
 It's strongly recommended to have a look first at the "Getting Started" guide, as some concepts are not going to be explained in detail here.
 {% endhint %}
 
-## Creating the function
+## 1. Creating the file with our Function
 
-1\) ****Create a new python file where we'll write the code in:
+Let's create a new python3 file where we'll write the code in:
 
 ```
 $ touch mnist.py
 ```
 
-2\) Now, just place the following code inside:
+Now, we place the following code inside:
 
 {% code-tabs %}
 {% code-tabs-item title="mnist.py" %}
@@ -56,13 +56,17 @@ def handler(event):
 Learning **Tensorflow** is out of the scope of this tutorial, but if you feel curious, you can learn about this great library here: [https://www.tensorflow.org/tutorials/](https://www.tensorflow.org/tutorials/)
 {% endhint %}
 
-3\) Great, lets log in now using the **Sharedcloud CLI** tool:
+## 2. Log in into Sharedcloud
+
+Great, lets log in now using the **Sharedcloud CLI** tool:
 
 ```text
 sharedcloud login --username <your_username> --password <your_password>
 ```
 
-4\) Now it's when things start getting interesting. As this function requires a GPU, it's important to provide now a "GPU ready" image. Let's list all the images again:
+## 3. List GPU Images
+
+Now it's when things start getting interesting. As this function requires a GPU, it's important to provide now a "GPU ready" image. Let's list all the images again:
 
 ```text
 sharedcloud image list
@@ -78,7 +82,9 @@ a8e496b2-ab15-40ee-a1bf-3a28d7a8a2c3  sharedcloud/web-crawling-python27:latest  
 1a5111c1-17ee-459f-a4da-9c5272d86b1d  sharedcloud/standard-node8:latest           An Image containing Node8                                                                        False           6 days ago
 ```
 
-If we look at the "**REQUIRES\_GPU**" column, we can see which images are "GPU ready" or not. In this case, we use **Python36** and **Tensorflow**, so the second image seems like a perfect fit. Paste its UUID in the **"--image-uuid"** argument
+If we look at the "**REQUIRES\_GPU**" column, we can see which images are "GPU ready" or not. In this case, we use **Python36** and **Tensorflow**, so the second image seems like a perfect fit. Therefore, we paste its UUID in the **"--image-uuid"** argument
+
+## 4. Create a Function
 
 ```text
 sharedcloud function create --name mnist \
@@ -86,7 +92,9 @@ sharedcloud function create --name mnist \
                             --image-uuid 23ca880b-94fe-472c-b9cf-934ed8295872
 ```
 
-5\) Ok! Now you can see you function with the cli:
+## 5. List Functions
+
+Ok! Now we can see our function with the cli:
 
 ```bash
 sharedcloud function list
@@ -98,11 +106,13 @@ UUID                                  NAME         IMAGE                        
 4aef65f8-a406-4660-8025-fd660599c83e  mnist        sharedcloud/tensorflow-gpu-python36:latest           0  11 seconds ago
 ```
 
-6\) The next step would be to define the run. As we explain previously, a run is a configuration object that we can use to specify different things like the list of arguments that we want to pass to the function. Additionally, a pretty interesting feature is the possibility of specifying the "base" GPU that we would like to use. With "base GPU" we refer to minimum GPU that this function will need to be able to run successfully.
+## 6. List GPU models available
 
-For example, if your function trains a neural network with many layers, you might want to select a GPU with plenty of GBs or RAM, otherwise your function might not finish well...
+The next step would be to define the run. As we explain previously, a run is a configuration object that we can use to specify different things like the list of arguments that we want to pass to the function. Additionally, a pretty interesting feature is the possibility of specifying the "base" GPU that we would like to use. With "base GPU" we refer to minimum GPU that this function will need to be able to run successfully.
 
-For listing all the GPUs available in a precise point of time, just run:
+For example, if our function trains a neural network with many layers, we might want to select a GPU with plenty of GBs or RAM, otherwise our function might not finish well...
+
+For listing all the GPUs available in a precise point of time, we run:
 
 ```text
 sharedcloud gpu list
@@ -124,12 +134,16 @@ d220b51d-569c-40de-a290-097f6781397f  Nvidia 1060 6GB        1060               
 
 How lucky we are! The **Nvidia Titan V** seems to be available in the market, let's try to bid for that one!
 
+## 7. Create a Run
+
 ```text
 sharedcloud run create --function-uuid 4aef65f8-a406-4660-8025-fd660599c83e \
                        --parameters "((512, 0.2, 10, 2), (512, 0.2, 10, 3))" \
                        --bid-price 0.05 \
                        --gpu-uuid caf0daeb-ba23-4499-b4f9-8b4965714366
 ```
+
+Notice how the **"--gpu-uuid"** parameters contains the UUID of the **Nvidia Titan V.** With this, we make sure that the function won't be executed in a GPU weaker than that graphics card.
 
 {% hint style="info" %}
 Some interesting things from the last command:
@@ -138,7 +152,7 @@ Some interesting things from the last command:
 2. The "**--bid-price**" argument represents the maximum amount of money \(in dollars\) that you would like to pay for each job, each minute. For example, "0.1" means that if I have 2 jobs, and each task takes 5 minutes, I would pay "0.05 \* 2 \* 5" = $0.5
 {% endhint %}
 
-6\) As we saw in the "Getting Started" guide, this created as many jobs as many internal tuples has the **"--parameters"** argument \(2 in this case!\) Let's see how they would be applied to our function:
+As we saw in the "Getting Started" guide, this created as many jobs as many internal tuples has the **"--parameters"** argument \(2 in this case!\) Let's see how they would be applied to our function:
 
 {% code-tabs %}
 {% code-tabs-item title="JOB 1" %}
@@ -146,30 +160,13 @@ Some interesting things from the last command:
 import tensorflow as tf
 
 
-def handler(event):
+def handler(event=((512, 0.2, 10, 2),)): # <--------
     tf.logging.set_verbosity(tf.logging.INFO)
-    p1 = int("512") # <----
-    p2 = float("0.2") # <----
-    p3 = int("10") # <----
-    p4 = int("2") # <----
-    mnist = tf.keras.datasets.mnist
-
-    (x_train, y_train),(x_test, y_test) = mnist.load_data()
-    x_train, x_test = x_train / 255.0, x_test / 255.0
-
-    model = tf.keras.models.Sequential([
-      tf.keras.layers.Flatten(),
-      tf.keras.layers.Dense(p1, activation=tf.nn.relu),
-      tf.keras.layers.Dropout(p2),
-      tf.keras.layers.Dense(p3, activation=tf.nn.softmax)
-    ])
-    model.compile(optimizer='adam',
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-    tf.logging.info(model.fit(x_train, y_train, epochs=p4))
-    e = model.evaluate(x_test, y_test)
-    tf.logging.info(e)
-    return e[-1]
+    p1 = int(event[0])
+    p2 = float(event[1])
+    p3 = int(event[2])
+    p4 = int(event[3])
+    ...
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
@@ -180,35 +177,20 @@ def handler(event):
 import tensorflow as tf
 
 
-def handler(event):
+def handler(event=((512, 0.2, 10, 3),)): # <--------
     tf.logging.set_verbosity(tf.logging.INFO)
-    p1 = int("512") # <----
-    p2 = float("0.2") # <----
-    p3 = int("10") # <----
-    p4 = int("3") # <----
-    mnist = tf.keras.datasets.mnist
-
-    (x_train, y_train),(x_test, y_test) = mnist.load_data()
-    x_train, x_test = x_train / 255.0, x_test / 255.0
-
-    model = tf.keras.models.Sequential([
-      tf.keras.layers.Flatten(),
-      tf.keras.layers.Dense(p1, activation=tf.nn.relu),
-      tf.keras.layers.Dropout(p2),
-      tf.keras.layers.Dense(p3, activation=tf.nn.softmax)
-    ])
-    model.compile(optimizer='adam',
-                  loss='sparse_categorical_crossentropy',
-                  metrics=['accuracy'])
-    tf.logging.info(model.fit(x_train, y_train, epochs=p4))
-    e = model.evaluate(x_test, y_test)
-    tf.logging.info(e)
-    return e[-1]
+    p1 = int(event[0])
+    p2 = float(event[1])
+    p3 = int(event[2])
+    p4 = int(event[3])
+    ...
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-8\) Alright, let's see now how our jobs are doing:
+## 8. List Jobs
+
+Alright, let's see now how our jobs are doing:
 
 ```text
 sharedcloud job list
@@ -222,7 +204,7 @@ fd68a431-ff23-4176-aba6-982d428aaab0     1  CREATED   $0.000              9 minu
 
 ```
 
-9\) After a few seconds, if the "bid-price" we provided gets matched with the Titan V user's "ask-price", we should see how our Jobs were successfully completed:
+After a few seconds, if the "bid-price" we provided gets matched with the Titan V user's "ask-price", we should see how our Jobs were successfully completed:
 
 ```text
 UUID                                    ID  STATUS      COST    DURATION       WHEN            RUN_UUID                              FUNCTION
@@ -231,7 +213,9 @@ fd68a431-ff23-4176-aba6-982d428aaab0     1  SUCCEEDED   $0.05   60 second/s    1
 4e49e9fe-e5bd-4259-af18-dbfb04ec4bfe     0  SUCCEEDED   $0.05   60 second/s    12 minutes ago  49485391-3a73-42d8-87ee-466a170bc7a4  mnist
 ```
 
-10\) Finally, as we explained in the previous guide, to inspect the results, we can use the following sub-commands:
+## 9. Inspect Job results
+
+Finally, as we explained in the previous guide, to inspect the results, we can use the following sub-commands:
 
 ```text
 sharedcloud job stdout --uuid fd68a431-ff23-4176-aba6-982d428aaab0
@@ -305,7 +289,7 @@ sharedcloud job result --uuid 14804287-76d0-4113-9fc9-6114ca17b098
 ```
 
 {% hint style="success" %}
-That's it! We just trained our first neural network model using Tensorflow and Sharedcloud!
+**That's it!** We just trained our first neural network model using **Tensorflow** and **Sharedcloud**!
 {% endhint %}
 
 

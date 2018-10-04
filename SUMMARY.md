@@ -6,7 +6,7 @@
 
 ## Tutorials
 
-* [How to run a tensorflow script in a GPU instance](tutorials/untitled.md)
+* [How to run a "tensorflow-based" function in a remote GPU instance](tutorials/untitled.md)
 * [How to rent out your own machine and start processing jobs](tutorials/how-to-rent-out-your-own-machine-and-start-processing-jobs.md)
 
 ## Sharedcloud CLI
