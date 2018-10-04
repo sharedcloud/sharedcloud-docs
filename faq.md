@@ -10,7 +10,7 @@ FaaS is the acronym of "function as a Service". According to Wikipedia:
 
 "**Function as a service** \(FaaS\) _is a category of cloud computing services that provides a platform allowing customers to develop, run, and manage application functionalities without the complexity of building and maintaining the infrastructure typically associated with developing and launching an app._"
 
-In short, this paradigm allows you to expose functions for later use. Think of it as if we were assigning a different URL to each function. Therefore, if we wish to run any of those functions, we can do it by just calling to that endpoint and provide the inputs \(arguments\) that the function expects.
+In short, this paradigm allows you to expose functions for later use. Think of it as if we were assigning a different URL to each function. Therefore, if we wish to run any of those functions, we can do it by just calling to that "endpoint" and provide the inputs \(arguments\) that the function expects.
 
 Not only this approach allows you to process abundantly amount of data at a minimal cost, but also simplifies the communication between services greatly, as the inputs and outputs of each function are perfectly defined.
 
