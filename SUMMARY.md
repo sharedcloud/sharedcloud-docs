@@ -49,3 +49,8 @@
   * [List offers](sharedcloud-cli/commands-reference/list-offers.md)
   * [List GPUs](sharedcloud-cli/commands-reference/list-gpus.md)
 
+## Sharedcloud API
+
+* [User accounts](sharedcloud-api/get-account-data.md)
+* [Untitled](sharedcloud-api/untitled.md)
+
