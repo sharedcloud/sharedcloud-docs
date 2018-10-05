@@ -51,13 +51,14 @@
 
 ## Sharedcloud API
 
-* [Get Token](sharedcloud-api/get-token.md)
-* [User Accounts](sharedcloud-api/get-account-data.md)
-* [Functions](sharedcloud-api/untitled.md)
-* [Runs](sharedcloud-api/untitled-1.md)
-* [Jobs](sharedcloud-api/jobs.md)
-* [Instances](sharedcloud-api/instances.md)
-* [Images](sharedcloud-api/images.md)
-* [GPUs](sharedcloud-api/gpus.md)
-* [Offers](sharedcloud-api/offers.md)
+* [Endpoints](sharedcloud-api/endpoints/README.md)
+  * [Get Token](sharedcloud-api/endpoints/get-token.md)
+  * [User Accounts](sharedcloud-api/endpoints/get-account-data.md)
+  * [Functions](sharedcloud-api/endpoints/functions.md)
+  * [Runs](sharedcloud-api/endpoints/runs.md)
+  * [Jobs](sharedcloud-api/endpoints/jobs.md)
+  * [Instances](sharedcloud-api/endpoints/instances.md)
+  * [Images](sharedcloud-api/endpoints/images.md)
+  * [GPUs](sharedcloud-api/endpoints/gpus.md)
+  * [Offers](sharedcloud-api/endpoints/offers.md)
 
