@@ -9,10 +9,10 @@ curl -d "username=my_username&password=my_password" -X POST https://sharedcloud.
 ```
 
 {% hint style="info" %}
-For this example we used "CURL", but you can use any other tool that you prefer.
+In this example we used "CURL", but you can use any other tool that you prefer.
 {% endhint %}
 
-After you get your personal Token, add it to the **HEADER** of any request you do to the Sharedcloud API, by following this format:
+After you have your personal Token, add it to the **HEADER** of any request you do to the **Sharedcloud API**, by following this format:
 
 ```text
 Authorization: Token <your_token>
