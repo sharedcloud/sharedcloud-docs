@@ -51,6 +51,13 @@
 
 ## Sharedcloud API
 
-* [User accounts](sharedcloud-api/get-account-data.md)
-* [Untitled](sharedcloud-api/untitled.md)
+* [Get Token](sharedcloud-api/get-token.md)
+* [User Accounts](sharedcloud-api/get-account-data.md)
+* [Functions](sharedcloud-api/untitled.md)
+* [Runs](sharedcloud-api/untitled-1.md)
+* [Jobs](sharedcloud-api/jobs.md)
+* [Instances](sharedcloud-api/instances.md)
+* [Images](sharedcloud-api/images.md)
+* [GPUs](sharedcloud-api/gpus.md)
+* [Offers](sharedcloud-api/offers.md)
 

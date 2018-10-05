@@ -1,4 +1,4 @@
-# User accounts
+# User Accounts
 
 {% api-method method="get" host="https://sharedcloud.io" path="/api/v1/users/account" %}
 {% api-method-summary %}
@@ -26,7 +26,7 @@ User account successfully retrieved.
 
 ```javascript
 {
-    "uuid": "3a0e1abe-c26e-43a8-8a1b-57acdf1fb85b",
+    "uuid": "3a7e1abe-c26e-43a8-8a1b-574cdf1fb851",
     "username": "johndoe",
     "email": "johndow@example.com",
     "last_login": None,
@@ -93,7 +93,7 @@ User account successfully created.
 ```javascript
 [
     {
-        "uuid": "19aee734-018f-4947-a1d5-27e0baa0f845",
+        "uuid": "49aee734-018f-5947-a1d5-2750ba20f845",
         "username": "johndoe",
         "email": "johndoe@example.com",
         "last_login": "04-10-2018 16:02:28",
@@ -161,7 +161,7 @@ Account successfully updated
 ```javascript
 [
     {
-        "uuid": "19aee734-018f-4947-a1d5-27e0baa0f845",
+        "uuid": "29aee732-518f-4944-a1d5-17e0baa0f845",
         "username": "johndoe",
         "email": "johndoe@example.com",
         "last_login": "04-10-2018 16:02:28",
@@ -229,7 +229,7 @@ Account successfully partially updated
 ```javascript
 [
     {
-        "uuid": "19aee734-018f-4947-a1d5-27e0baa0f845",
+        "uuid": "29aee734-218f-6947-a7d5-27e07aa0f845",
         "username": "johndoe",
         "email": "johndoe@example.com",
         "last_login": "04-10-2018 16:02:28",
@@ -299,4 +299,6 @@ Invalid credentials
 {% endapi-method-response %}
 {% endapi-method-spec %}
 {% endapi-method %}
+
+
 
