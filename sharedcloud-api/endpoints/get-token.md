@@ -1,6 +1,6 @@
 # Get Token
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/api-token-auth" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/api-token-auth/" %}
 {% api-method-summary %}
 Get Token
 {% endapi-method-summary %}

@@ -51,6 +51,7 @@
 
 ## Sharedcloud API
 
+* [How to use](sharedcloud-api/how-to-use.md)
 * [Endpoints](sharedcloud-api/endpoints/README.md)
   * [Get Token](sharedcloud-api/endpoints/get-token.md)
   * [User Accounts](sharedcloud-api/endpoints/get-account-data.md)
