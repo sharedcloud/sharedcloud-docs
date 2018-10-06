@@ -1,6 +1,6 @@
 # GPUs
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/gpus" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/gpus/" %}
 {% api-method-summary %}
 Get List of GPUs
 {% endapi-method-summary %}
@@ -54,7 +54,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/gpus/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/gpus/:uuid/" %}
 {% api-method-summary %}
 Get GPU
 {% endapi-method-summary %}

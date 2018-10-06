@@ -1,6 +1,6 @@
 # Images
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/images" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/images/" %}
 {% api-method-summary %}
 Get List of Images
 {% endapi-method-summary %}
@@ -58,7 +58,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/images/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/images/:uuid/" %}
 {% api-method-summary %}
 Get Image
 {% endapi-method-summary %}

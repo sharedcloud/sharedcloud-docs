@@ -1,6 +1,6 @@
 # Instances
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/instances" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/instances/" %}
 {% api-method-summary %}
 Get List of Instances
 {% endapi-method-summary %}
@@ -62,7 +62,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/instances/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/instances/:uuid/" %}
 {% api-method-summary %}
 Get Instance
 {% endapi-method-summary %}
@@ -140,7 +140,7 @@ Instance not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/instances" %}
+{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/instances/" %}
 {% api-method-summary %}
 Create Instance
 {% endapi-method-summary %}
@@ -222,7 +222,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/instances/:uuid" %}
+{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/instances/:uuid/" %}
 {% api-method-summary %}
 Update Instance
 {% endapi-method-summary %}
@@ -322,7 +322,7 @@ Instance not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/instances/:uuid" %}
+{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/instances/:uuid/" %}
 {% api-method-summary %}
 Partially update Instance
 {% endapi-method-summary %}
@@ -422,7 +422,7 @@ Instance not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/instances/:uuid" %}
+{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/instances/:uuid/" %}
 {% api-method-summary %}
 Delete Instance
 {% endapi-method-summary %}

@@ -1,6 +1,6 @@
 # Jobs
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/jobs" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/jobs/" %}
 {% api-method-summary %}
 Get List of Jobs
 {% endapi-method-summary %}
@@ -65,7 +65,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/jobs/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/jobs/:uuid/" %}
 {% api-method-summary %}
 Get Job
 {% endapi-method-summary %}

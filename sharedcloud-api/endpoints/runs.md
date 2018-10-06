@@ -1,6 +1,6 @@
 # Runs
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/runs" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/runs/" %}
 {% api-method-summary %}
 Get List of Runs
 {% endapi-method-summary %}
@@ -57,7 +57,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/runs/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/runs/:uuid/" %}
 {% api-method-summary %}
 Get Run
 {% endapi-method-summary %}
@@ -130,7 +130,7 @@ Run not found
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/runs" %}
+{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/runs/" %}
 {% api-method-summary %}
 Create Run
 {% endapi-method-summary %}
@@ -203,7 +203,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/runs/:uuid" %}
+{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/runs/:uuid/" %}
 {% api-method-summary %}
 Delete Run
 {% endapi-method-summary %}

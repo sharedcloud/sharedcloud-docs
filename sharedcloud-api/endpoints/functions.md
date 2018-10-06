@@ -1,6 +1,6 @@
 # Functions
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/functions" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/functions/" %}
 {% api-method-summary %}
 Get List of Functions
 {% endapi-method-summary %}
@@ -57,7 +57,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/functions/:uuid" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/functions/:uuid/" %}
 {% api-method-summary %}
 Get Function
 {% endapi-method-summary %}
@@ -130,7 +130,7 @@ Function not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/functions" %}
+{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/functions/" %}
 {% api-method-summary %}
 Create Function
 {% endapi-method-summary %}
@@ -203,7 +203,7 @@ Invalid credentials.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/functions/:uuid" %}
+{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/functions/:uuid/" %}
 {% api-method-summary %}
 Update Function
 {% endapi-method-summary %}
@@ -294,7 +294,7 @@ Function not found.
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/functions/:uuid" %}
+{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/functions/:uuid/" %}
 {% api-method-summary %}
 Partially update Function
 {% endapi-method-summary %}
@@ -385,7 +385,7 @@ Function not found
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/functions/:uuid" %}
+{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/functions/:uuid/" %}
 {% api-method-summary %}
 Delete Function
 {% endapi-method-summary %}

@@ -1,6 +1,6 @@
 # Offers
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/offers" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/offers/" %}
 {% api-method-summary %}
 Get List of Offers
 {% endapi-method-summary %}
