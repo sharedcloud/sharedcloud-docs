@@ -1,6 +1,6 @@
 # User Accounts
 
-{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/users/account" %}
+{% api-method method="get" host="https://sharedcloud.io" path="/api/v1/users/account/" %}
 {% api-method-summary %}
 Get Account data
 {% endapi-method-summary %}
@@ -52,7 +52,7 @@ Invalid credentials
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/users" %}
+{% api-method method="post" host="https://sharedcloud.io" path="/api/v1/users/" %}
 {% api-method-summary %}
 Create User Account
 {% endapi-method-summary %}
@@ -120,7 +120,7 @@ Invalid credentials
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/users/account" %}
+{% api-method method="put" host="https://sharedcloud.io" path="/api/v1/users/account/" %}
 {% api-method-summary %}
 Update User Account
 {% endapi-method-summary %}
@@ -188,7 +188,7 @@ Invalid credentials
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/users/account" %}
+{% api-method method="patch" host="https://sharedcloud.io" path="/api/v1/users/account/" %}
 {% api-method-summary %}
 Partially update User Account
 {% endapi-method-summary %}
@@ -256,7 +256,7 @@ Invalid credentials
 {% endapi-method-spec %}
 {% endapi-method %}
 
-{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/users/account" %}
+{% api-method method="delete" host="https://sharedcloud.io" path="/api/v1/users/account/" %}
 {% api-method-summary %}
 Delete User Account
 {% endapi-method-summary %}
