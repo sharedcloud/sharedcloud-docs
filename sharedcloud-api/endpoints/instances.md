@@ -162,8 +162,8 @@ Authentication token
 UUID of the GPU of the instance
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="type" type="string" required=false %}
-type of the instance. It can be "cpu" or "gpu" \(Default: "cpu"\)
+{% api-method-parameter name="type" type="integer" required=false %}
+type of the instance. It can be 1 \(cpu\) or 2 \(gpu\) \(Default: 1\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="name" type="string" required=true %}
@@ -250,8 +250,8 @@ Authentication token
 UUID of the GPU of the instance
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="type" type="string" required=false %}
-type of the instance. It can be "cpu" or "gpu" \(Default: "cpu"\)
+{% api-method-parameter name="type" type="integer" required=false %}
+type of the instance. It can be 1 \(cpu\) or 2 \(gpu\) \(Default: 1\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="name" type="string" required=true %}
@@ -350,8 +350,8 @@ Authentication token
 UUID of the GPU of the instance
 {% endapi-method-parameter %}
 
-{% api-method-parameter name="type" type="string" required=false %}
-type of the instance. It can be "cpu" or "gpu" \(Default: "cpu"\)
+{% api-method-parameter name="type" type="integer" required=false %}
+type of the instance. It can be 1 \(cpu\) or 2 \(gpu\) \(Default: 1\)
 {% endapi-method-parameter %}
 
 {% api-method-parameter name="name" type="string" required=false %}
